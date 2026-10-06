@@ -1,0 +1,6 @@
+# Ignore everything except the files needed by the Azure Function app
+*
+!function_app.py
+!update_acls.py
+!requirements.txt
+!host.json

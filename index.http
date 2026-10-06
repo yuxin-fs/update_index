@@ -1,0 +1,589 @@
+@searchService = srch-ai-kmagent-dev-ccanada-001
+@accessToken = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImRndlNEdks4QTVLeUt5cHB3MWRBd1RYRDNDQSIsImtpZCI6ImRndlNEdks4QTVLeUt5cHB3MWRBd1RYRDNDQSJ9.eyJhdWQiOiJodHRwczovL3NlYXJjaC5henVyZS5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zOGMwMTA3ZC04MWQxLTQxOWYtOGI3Mi04YTQ5MWRjOTYwM2MvIiwiaWF0IjoxNzkwNzgxMDAwLCJuYmYiOjE3OTA3ODEwMDAsImV4cCI6MTc5MDc4NTAyNSwiYWNyIjoiMSIsImFpbyI6IkFYUUFpLzhlQUFBQVZka1QrN3owekt2UXoxNzdmQ0FUVTc2OVVMbTRaeVJKWnlVbTQ1UHptckFPVWJocC9ESUhNSUJ1UE9FY3NJbVF6WGlhUnh3NTFTQjhJL29OcEVmQ2dHMkZod0dFd3FVcVFwa1BvVDdjTk9KdncrdVlmOXNoaTB0VGkwdVRLWk1mUnpsbkQ5by9YV0F0R01McFJYOTYrQT09IiwiYW1yIjpbInB3ZCIsInJzYSIsIm1mYSJdLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImRldmljZWlkIjoiMDQ2MDcyMzMtNTQ1ZC00ZjFhLTgyOWEtMWRmMjYwNDgwMDg2IiwiZW1haWwiOiJZdVhpbi5MaUBmb3Vyc2Vhc29ucy5jb20iLCJmYW1pbHlfbmFtZSI6IkxpIiwiZ2l2ZW5fbmFtZSI6Ill1WGluIiwiZ3JvdXBzIjpbIjhlMzE4MTAyLTI0NGYtNGNmMS1iNTI4LWVkNzQ2OThkNGNhNCIsIjIxYWU0Mjg5LWFiYWQtNGQxYy05ODEzLTA4Njc0MzQ4NzIzNCIsIjU2YjhjNjYxLWI3NmQtNGMzNy1hZmRkLTRmZTVjYzk0MGQyZiIsIjE5ZTIwNzYwLWQ1ZDEtNDk2OC04ODVkLTE5NDk4MWEyMDg2ZCIsIjg1NmI1MmM4LWNlZjItNGYzMC1iZDk2LTFjMmVhZmIwZjU5YyIsIjI3NWE3NmMyLTBiMWYtNDY0Yi04YzFiLTUwYjNkNzMwMTRjNyIsImEwZmIzNDAyLTI3ZmMtNGRjOC04NDlkLTgxNjFmYjkwZDEwZCIsImFkMjgxM2ZhLTE1ZDAtNDcyOC04NGVlLThkM2E2ZTI5NTMxOSIsIjVmODNjMDM0LWVjYTktNDg5NS05MDE1LTk0MmU0YTM5ZmZkZCIsIjE4ZDU3ZDU2LTEyYWQtNGVkZC04NTJiLTU1ZGNmNjMxM2UxNiIsIjVmYjlmMjIzLWI4OGItNDc1NS1hMGZhLTM5ZTJhYmM4NWU5NyIsIjU4MTNiYmQ5LWI5MWEtNDg1OS04NWM1LWZmYzgwM2M1M2E3ZSIsIjcwMDkzZjNkLWE3MDQtNDc0MS1iMGQyLTkwYjAxZmNhMTBhNiIsIjVhYjJlNTI2LWE0Y2ItNDQyNi1iMDVhLWVmNTVkMjk1M2YwNiIsIjFiMDJhNDQ0LTRiYmItNDY1NC04ZTJjLTZiODBmZjFkNWRiMCIsIjM5Y2UzZTg3LWNhNWMtNGIxMC05NGU5LWYxY2JiNTdlOTYyZiIsImFmNTU4ZTYyLWIxMzgtNDYzNC1hMTI5LTJjODcyNjU4ZmIwNCIsIjNhYzBhNjZiLTkzOWItNGUyMC04ZmYwLTUxM2ZiZGQzN2MzNyIsIjYzMzFjODRlLTMyNWEtNDI1OC1iNmQxLTEzYmFhZDNlY2MxOSIsImZhZTIyOWJiLWIzNTctNDQ0My1hMWQ4LTQ5ZjEyZjgwOTUwOSIsIjRiYWY1ZmFmLWM3MWItNGRhNS1hMGMxLTc0M2I0NzNjMDMxNCIsIjEyMmE3YjUxLTM1MGQtNDA5NS1hMzA3LWIzYzllNzI2ZjliNiIsIjJlNzZiZDAzLTlkMGMtNDc2NS05ZDMzLWYxYzhhYjg4MDUwMyIsIjllNWE3MGVkLWEyY2EtNDU1NS05MmI3LTNlMzQ3NTM4YTFlYSIsIjEzYTMxZjg3LTc3NzAtNGMyYy04ZWEyLWMyZmU3NDRhNzk4NSIsIjM3YmEyMmFkLTgxNjctNDhlOS04OWRkLTA5OWM2MWQ5NjFkNyIsIjJjZmVlNjVmLTg4YTktNDAwMC1iMGU4LTQyOWEzZTM1NDFjNiIsIjQ0MzJkZjk4LTYyYzctNDI1NS1hMjU2LTFhNzMzNGI5MTVlMiIsImI2MWQzZGQ3LTA4YTgtNDE0Zi04ZTljLWNjOWJmMjFmYmFkZSIsIjQ5NzY4ZGU5LThkOWMtNDc1MC05MTY3LTRhODhhOGZiODhlZCIsIjIwMjNhYWRiLWQwODktNDM2Zi1iMjk4LTI4YTY5MWMwMDY4OCIsImExNjc3NmJkLTI5M2EtNGMwMS1iYzVjLTgyZWI3OWQ2NDQ3ZCIsIjAxMmU2YmZjLTVmNTAtNDdhNi1iNDVlLWIzMTY0NzA0MTE1NSIsIjc4ZWM4NjM0LTU2NWQtNGIwMS05YzI3LWI0NDNmZTI2MjNjMyIsImVlN2VkYjA4LWEwNmQtNGQ2MC1hNDUyLThiODE0MmZkNTMwMiJdLCJpZHR5cCI6InVzZXIiLCJpcGFkZHIiOiI1Mi42MC4yMTAuMTMzIiwibmFtZSI6IlNvcGhpYSBMaSIsIm9pZCI6IjZmMTMyNTA2LWMxYzItNDI5OS1iNTU2LTU0ZGU3NDU2ZDk1YyIsIm9ucHJlbV9zaWQiOiJTLTEtNS0yMS03OTI4ODU4MTQtMTI0OTEzMjUzOS01NTkzOTE1MTctNjUyMjUwIiwicHVpZCI6IjEwMDMyMDA1QzI3RkU1OEUiLCJwd2RfZXhwIjoiMTQ3Njk0MzAiLCJwd2RfdXJsIjoiaHR0cHM6Ly9nby5taWNyb3NvZnQuY29tL2Z3bGluay8_bGlua2lkPTIyMjQxOTgiLCJyaCI6IjEuQVRFQWZSREFPTkdCbjBHTGNvcEpIY2xnUElDakRZaGVtSmhCZ2JuZ1d4ekZNVmdBQUxjeEFBLiIsInNjcCI6InVzZXJfaW1wZXJzb25hdGlvbiIsInNpZCI6IjAwM2U3MDdhLTZhNTktMmYyYS1kOGIwLWZjZGY0MTlhZDA3OSIsInN1YiI6ImVyQ1B5WTdsZTAtNDF0MGRYTmVqQmV6Mmk5YlNIc1hGaDdGZDBSREFMOWMiLCJ0aWQiOiIzOGMwMTA3ZC04MWQxLTQxOWYtOGI3Mi04YTQ5MWRjOTYwM2MiLCJ1bmlxdWVfbmFtZSI6Ill1WGluLkxpQGZvdXJzZWFzb25zLmNvbSIsInVwbiI6Ill1WGluLkxpQGZvdXJzZWFzb25zLmNvbSIsInV0aSI6Ilo2QVFPSjFRWlUyZVA4ZTdfbVJUQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfYWN0X2ZjdCI6IjUgMyIsInhtc19hdWRfZ3VpZCI6Ijg4MGRhMzgwLTk4NWUtNDE5OC04MWI5LWUwNWIxY2M1MzE1OCIsInhtc19mdGQiOiJDQ09keDQwRk5ZeW8tZm16a3lGbUU0dGpGZDFEdTRuTVozelNveHJxTDZVQmMzZGxaR1Z1WXkxa2MyMXoiLCJ4bXNfaWRyZWwiOiIxIDIyIiwieG1zX3N1Yl9mY3QiOiIxMCAzIn0.csYvy1ACq61RubT2-x5CWl9J417tNvVwvQzE0Xc7roxvwsAvS9x0zSI9wrGNBvIS0SzrW3A955QJzckgyVqcRtexGYxSC7rcakIYt0XNgfS64Ed92wJHOwybWvz1KqsNBQSFDQwj3kdwmEE3mxueNZnOJ1W0Y_6ZzPZSFDwwFTasXqOXAiMgmhPYx07kCoawi4riuI3XvDR37zvZ53yLOxQTgiX2e0XztHK2AQaoFrcZ17JPC6UZm4WPYO8-iuxQNl07uFGxbgaY4TcEPxQaM9SHWuIcFkMFA-uMxlTYXXqIRiPqBP_yqznahsELhUIPA8dc8ve6aydKWOPMBr3EUA
+# @querySourceToken = {{accessToken}}
+@querySourceToken = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImRndlNEdks4QTVLeUt5cHB3MWRBd1RYRDNDQSIsImtpZCI6ImRndlNEdks4QTVLeUt5cHB3MWRBd1RYRDNDQSJ9.eyJhdWQiOiJodHRwczovL3NlYXJjaC5henVyZS5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zOGMwMTA3ZC04MWQxLTQxOWYtOGI3Mi04YTQ5MWRjOTYwM2MvIiwiaWF0IjoxNzkwMjg0OTA0LCJuYmYiOjE3OTAyODQ5MDQsImV4cCI6MTc5MDI4ODk0MywiYWNyIjoiMSIsImFpbyI6IkFYUUFpLzhlQUFBQWhRRHBzZ2xnQlRyN1JVMVZ6RFF1eGtIQ25lRTJwdXMzMkU2YmVKeWR3TW1nNWVpTUlNc0pwRDRUR3pKbUh1TlpqaDhzaTRaR0JzRGc4THRzS1J5elVZNjlxWmwwNTJwZVhVT0hTVVhMM1hEOWFtbEV6UEo0aHpHRGN5YmNobWVpZ25GSkNpanB3OXp0dGNzNzdNc0dmZz09IiwiYW1yIjpbInB3ZCIsInJzYSIsIm1mYSJdLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImRldmljZWlkIjoiYTkxMDYyOTEtMjFlMy00ZTM0LWFlMzUtNjkyZjZiOGUzZjJkIiwiZW1haWwiOiJWaXZlay5TYXhlbmFAZm91cnNlYXNvbnMuY29tIiwiZmFtaWx5X25hbWUiOiJTYXhlbmEiLCJnaXZlbl9uYW1lIjoiVml2ZWsiLCJncm91cHMiOlsiYTBmYjM0MDItMjdmYy00ZGM4LTg0OWQtODE2MWZiOTBkMTBkIiwiOGUzMTgxMDItMjQ0Zi00Y2YxLWI1MjgtZWQ3NDY5OGQ0Y2E0IiwiZWU3ZWRiMDgtYTA2ZC00ZDYwLWE0NTItOGI4MTQyZmQ1MzAyIiwiNWZiOWYyMjMtYjg4Yi00NzU1LWEwZmEtMzllMmFiYzg1ZTk3IiwiNWFiMmU1MjYtYTRjYi00NDI2LWIwNWEtZWY1NWQyOTUzZjA2IiwiNzhlYzg2MzQtNTY1ZC00YjAxLTljMjctYjQ0M2ZlMjYyM2MzIiwiNWY4M2MwMzQtZWNhOS00ODk1LTkwMTUtOTQyZTRhMzlmZmRkIiwiNzAwOTNmM2QtYTcwNC00NzQxLWIwZDItOTBiMDFmY2ExMGE2IiwiMWIwMmE0NDQtNGJiYi00NjU0LThlMmMtNmI4MGZmMWQ1ZGIwIiwiMTIyYTdiNTEtMzUwZC00MDk1LWEzMDctYjNjOWU3MjZmOWI2IiwiMThkNTdkNTYtMTJhZC00ZWRkLTg1MmItNTVkY2Y2MzEzZTE2IiwiMTllMjA3NjAtZDVkMS00OTY4LTg4NWQtMTk0OTgxYTIwODZkIiwiNTZiOGM2NjEtYjc2ZC00YzM3LWFmZGQtNGZlNWNjOTQwZDJmIiwiYWY1NThlNjItYjEzOC00NjM0LWExMjktMmM4NzI2NThmYjA0IiwiNWQ2MDAwNjMtZjAzOS00MmZhLWIzNWUtNGNiMDQ2MDUzNTZlIiwiM2FjMGE2NmItOTM5Yi00ZTIwLThmZjAtNTEzZmJkZDM3YzM3IiwiMTNhMzFmODctNzc3MC00YzJjLThlYTItYzJmZTc0NGE3OTg1IiwiMzljZTNlODctY2E1Yy00YjEwLTk0ZTktZjFjYmI1N2U5NjJmIiwiMjFhZTQyODktYWJhZC00ZDFjLTk4MTMtMDg2NzQzNDg3MjM0IiwiNDQzMmRmOTgtNjJjNy00MjU1LWEyNTYtMWE3MzM0YjkxNWUyIiwiMzdiYTIyYWQtODE2Ny00OGU5LTg5ZGQtMDk5YzYxZDk2MWQ3IiwiYTE2Nzc2YmQtMjkzYS00YzAxLWJjNWMtODJlYjc5ZDY0NDdkIiwiMjc1YTc2YzItMGIxZi00NjRiLThjMWItNTBiM2Q3MzAxNGM3IiwiODU2YjUyYzgtY2VmMi00ZjMwLWJkOTYtMWMyZWFmYjBmNTljIiwiYjYxZDNkZDctMDhhOC00MTRmLThlOWMtY2M5YmYyMWZiYWRlIiwiNTgxM2JiZDktYjkxYS00ODU5LTg1YzUtZmZjODAzYzUzYTdlIiwiMjAyM2FhZGItZDA4OS00MzZmLWIyOTgtMjhhNjkxYzAwNjg4IiwiNDk3NjhkZTktOGQ5Yy00NzUwLTkxNjctNGE4OGE4ZmI4OGVkIiwiOWU1YTcwZWQtYTJjYS00NTU1LTkyYjctM2UzNDc1MzhhMWVhIiwiYWQyODEzZmEtMTVkMC00NzI4LTg0ZWUtOGQzYTZlMjk1MzE5IiwiMDEyZTZiZmMtNWY1MC00N2E2LWI0NWUtYjMxNjQ3MDQxMTU1Il0sImlkdHlwIjoidXNlciIsImlwYWRkciI6IjUyLjYwLjIxMC4xMzMiLCJuYW1lIjoiVml2ZWsgU2F4ZW5hIiwib2lkIjoiYzAyNzNhMzEtM2I0NC00N2I2LWIwMDktYmMyMzJhNTRmM2ViIiwib25wcmVtX3NpZCI6IlMtMS01LTIxLTc5Mjg4NTgxNC0xMjQ5MTMyNTM5LTU1OTM5MTUxNy01OTUwNDMiLCJwdWlkIjoiMTAwMzIwMDUxOEI0MjZGMiIsInB3ZF9leHAiOiIxNDQxMDA4NiIsInB3ZF91cmwiOiJodHRwczovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9saW5raWQ9MjIyNDE5OCIsInJoIjoiMS5BVEVBZlJEQU9OR0JuMEdMY29wSkhjbGdQSUNqRFloZW1KaEJnYm5nV3h6Rk1WZ0FBSDh4QUEuIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic2lkIjoiMDA4YzkwN2EtYzE1NC1hYWZkLTQyMTItZjBjYzhjMTA1NGJhIiwic3ViIjoiN29MMl9WWl8tWTVIZmVsVS1XdC11Vzl3dEI3dk1YejBIM25QZUNXMWhaUSIsInRpZCI6IjM4YzAxMDdkLTgxZDEtNDE5Zi04YjcyLThhNDkxZGM5NjAzYyIsInVuaXF1ZV9uYW1lIjoiVml2ZWsuU2F4ZW5hQGZvdXJzZWFzb25zLmNvbSIsInVwbiI6IlZpdmVrLlNheGVuYUBmb3Vyc2Vhc29ucy5jb20iLCJ1dGkiOiJCYldlYm9pQi1FYWF1UXNOcVlXSkFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX2FjdF9mY3QiOiI1IDMiLCJ4bXNfZnRkIjoiS2dIM0RqOGFnZ09FcHppWmNyMTVtclBENzlNREdlM3hTelRZWG8wS202QUJabkpoYm1ObFl5MWtjMjF6IiwieG1zX2lkcmVsIjoiMiAxIiwieG1zX3N1Yl9mY3QiOiIzIDEyIn0.A0f1b6Ul1gNbLPUXhMPNvI8yUIEmUdrZ38eyMspfBGxMZ40t5Fn31x05xlpuJe2zJYMRyGIsLQZD98kin7OWxQ3aE4v-PGfQUPp-yt8UJVSjSC4qA054dBJsAcOWkfNZ0MPK30OYxDlAUb2ajIYmljUOk33wfkxIw2Umy0ba72L1en2VH2g3btX7Ggmkqvl1--BNBMxfJlTbefTzJQHwJRAZ8EelUjINN6iCoZ2bRM9Ph3F8-95O1QxyrnzqJjLob5jJLwNnzg3frqSY6rL_d1B8CcPzqo1hLW9mw6_fG701R-SQyn9REnqLmLoagBUII3ZSDQq1Qd1ST7AoQQJn9Q
+@tenantId = 38c0107d-81d1-419f-8b72-8a491dc9603c
+@appId = daeec413-d047-4ad3-a1ad-9c85782c319c
+# @appId = e620152b-bdc1-4b72-98fe-88060a4055e7
+@sharePointSite = https://fshr.sharepoint.com/sites/DigitalGuestExperienceKnowledge 
+@federated-credential = afdfda6a-cc57-4bf2-9dd2-bf4a538824a6
+# @federated-credential = 9528ef04-25ca-462e-bfab-f0375f2ebe9c
+@index-prefix = digitalguestexperience-sharepoint
+@functionAppName = fapp-ai-updateindex-dev-ccanada-001-gbfsdua6bpa8e8a6.canadacentral-01
+@aclFunctionKey = ""
+# --- Azure OpenAI (for the embedding skill) ---
+@openAiResourceUri = https://proj-ai-kmagent-dev-ecanada-001.openai.azure.com
+@openAiApiKey = ""
+@openAiDeploymentId = text-embedding-3-large
+@openAiModelName = text-embedding-3-large
+@embeddingDimensions = 3072
+
+# =========================================================================
+# Workflow notes:
+# - This file EXTENDS the base {{index-prefix}}-datasource/index/indexer setup
+#   with chunking (Split Skill) + embeddings (Azure OpenAI Embedding Skill),
+#   following the "Skillset with chunking, single index with parent fields
+#   repeated on each chunk (projectionMode: skipIndexingParentDocuments)"
+#   pattern from the ACL configuration guide.
+# - In this pattern, the PARENT document is never written to the index —
+#   only chunks are. ACL fields (UserIds/GroupIds) must therefore be carried
+#   onto every chunk via indexProjections.selectors[].mappings, NOT via
+#   plain indexer fieldMappings (those are bypassed for the chunk index
+#   in this mode).
+# - Order: create all-content datasource -> create chunk index (with vector
+#   + ACL fields, permissionFilterOption enabled) -> create skillset (split
+#   + embed + index projections) -> create all-content indexer -> run ->
+#   verify with elevated read.
+# =========================================================================
+
+
+# --------------------------------------------------------------------
+# 0. Cleanup any previous chunked pipeline objects (safe to skip on first run)
+# --------------------------------------------------------------------
+DELETE https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+
+###
+
+DELETE https://{{searchService}}.search.windows.net/skillsets/{{index-prefix}}-pages-skillset?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+
+DELETE https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+
+
+# Cleanup existing datasources.
+DELETE https://{{searchService}}.search.windows.net/datasources/{{index-prefix}}-pages-datasource?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+
+###
+# --------------------------------------------------------------------
+# 1. All-content datasource (documents + pages + lists).
+# --------------------------------------------------------------------
+POST https://{{searchService}}.search.windows.net/datasources?api-version=2026-05-01-preview
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "name": "{{index-prefix}}-pages-datasource",
+  "type": "sharepoint",
+  "indexerPermissionOptions": ["userIds", "groupIds"],
+
+  "credentials": {
+    "connectionString": "SharePointOnlineEndpoint={{sharePointSite}};ApplicationId={{appId}};TenantId={{tenantId}};FederatedCredentialApplicationId={{federated-credential}}"
+  },
+
+  "container": {
+    "name": "allSiteContent"
+  }
+}
+
+###
+
+
+# --------------------------------------------------------------------
+# 2. Chunk index — one document per chunk, carries content + vector +
+#    ACL fields + parent metadata. permissionFilterOption enabled so
+#    query-time ACL filtering is honored on this index.
+# --------------------------------------------------------------------
+PUT https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index?api-version=2026-05-01-preview
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "name": "{{index-prefix}}-chunks-index",
+
+  
+  "sharePointConnectorAppRegistration": {
+    "applicationId": "{{appId}}",
+    "tenantId": "{{tenantId}}",
+    "federatedCredentialId": "{{federated-credential}}"
+  },
+
+
+  "permissionFilterOption": "enabled",
+ "fields": [
+    { "name": "chunkId", "type": "Edm.String",  "retrievable": true, "filterable": true, "sortable": true, "facetable": false, "searchable": true, "analyzer": "keyword", "key": true},
+    { "name": "parentId", "type": "Edm.String", "retrievable": true, "filterable": true, "sortable": false, "facetable": false, "searchable": false},
+    { "name": "content", "type": "Edm.String", "retrievable": true, "filterable": false, "sortable": false, "facetable": false, "searchable": true},
+    {
+      "name": "contentVector",
+      "type": "Collection(Edm.Single)",
+      "searchable": true,
+      "retrievable": false,
+      "sortable": false,
+      "facetable": false,
+      "dimensions": {{embeddingDimensions}},
+      "vectorSearchProfile": "{{index-prefix}}-vector-profile"
+    },
+    { "name": "title", "type": "Edm.String",  "retrievable": true, "filterable": true, "sortable": false, "facetable": false, "searchable": true },
+    { "name": "metadata_spo_item_path", "type": "Edm.String", "retrievable": true, "filterable": true, "sortable": false, "facetable": false, "searchable": false},
+    { "name": "url", "type": "Edm.String", "retrievable": true, "filterable": false, "sortable": false, "facetable": false, "searchable": false},
+    { "name": "metadata_spo_item_last_modified", "type": "Edm.DateTimeOffset", "retrievable": true, "filterable": true, "sortable": true, "facetable": false, "searchable": false},
+    {
+      "name": "UserIds",
+      "type": "Collection(Edm.String)",
+      "searchable": false,
+      "filterable": true,
+      "retrievable": true,
+      "sortable": false,
+      "facetable": false,
+      "permissionFilter": "userIds"
+    },
+    {
+      "name": "GroupIds",
+      "type": "Collection(Edm.String)",
+      "searchable": false,
+      "filterable": true,
+      "retrievable": true,
+      "sortable": false,
+      "facetable": false,
+      "permissionFilter": "groupIds"
+    }, 
+    {
+      "name": "SharePointSiteUrl",
+      "type": "Edm.String",
+      "sharepointSiteUrl": true,
+      "searchable": false,
+      "filterable": true,
+      "retrievable": true,
+      "sortable": false,
+      "facetable": false
+    }
+  ],
+  "semantic": {
+    "defaultConfiguration": "sp-semantic-config",
+    "configurations": [
+      {
+        "name": "sp-semantic-config",
+        "prioritizedFields": {
+          "prioritizedContentFields": [
+            {
+              "fieldName": "title"
+            },
+            {
+              "fieldName": "content"
+            }
+          ]
+        },
+        "rankingOrder": "BoostedRerankerScore"
+      }
+    ]
+  },
+  "vectorSearch": {
+    "algorithms": [
+      { "name": "{{index-prefix}}-hnsw", "kind": "hnsw" }
+    ],
+    "profiles": [
+      {
+        "name": "{{index-prefix}}-vector-profile",
+        "algorithm": "{{index-prefix}}-hnsw",
+        "vectorizer": "{{index-prefix}}-vectorizer"
+      }
+    ],
+    "vectorizers": [
+      {
+        "name": "{{index-prefix}}-vectorizer",
+        "kind": "azureOpenAI",
+        "azureOpenAIParameters": {
+          "resourceUri": "{{openAiResourceUri}}",
+          "deploymentId": "{{openAiDeploymentId}}",
+          "modelName": "{{openAiModelName}}",
+          "apiKey": "{{openAiApiKey}}"
+        }
+      }
+    ]
+  }
+}
+
+###
+
+
+# --------------------------------------------------------------------
+# 3. All-content skillset — chunk + embedding pipeline with ACL
+# projections enabled for all ingested content.
+# --------------------------------------------------------------------
+PUT https://{{searchService}}.search.windows.net/skillsets/{{index-prefix}}-pages-skillset?api-version=2026-05-01-preview
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "name": "{{index-prefix}}-pages-skillset",
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+      "name": "#sharepoint-acl-enrichment",
+      "description": "Resolve and merge SharePoint ACL tenant IDs.",
+      "context": "/document",
+      "uri": "https://{{functionAppName}}.azurewebsites.net/api/enrich-sharepoint-acls?code={{aclFunctionKey}}",
+      "httpMethod": "POST",
+      "timeout": "PT3M",
+      "batchSize": 10,
+      "degreeOfParallelism": 2,
+      "inputs": [
+        { "name": "url", "source": "/document/metadata_spo_item_weburi" },
+        { "name": "existingUserIds", "source": "/document/metadata_user_ids" },
+        { "name": "existingGroupIds", "source": "/document/metadata_group_ids" }
+      ],
+      "outputs": [
+        { "name": "mergedUserIds", "targetName": "mergedUserIds" },
+        { "name": "mergedGroupIds", "targetName": "mergedGroupIds" }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.SplitSkill",
+      "name": "#split",
+      "context": "/document",
+      "textSplitMode": "pages",
+      "maximumPageLength": 2000,
+      "pageOverlapLength": 200,
+      "inputs": [
+        { "name": "text", "source": "/document/content" }
+      ],
+      "outputs": [
+        { "name": "textItems", "targetName": "pages" }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.AzureOpenAIEmbeddingSkill",
+      "name": "#embed",
+      "context": "/document/pages/*",
+      "resourceUri": "{{openAiResourceUri}}",
+      "deploymentId": "{{openAiDeploymentId}}",
+      "modelName": "{{openAiModelName}}",
+      "apiKey": "{{openAiApiKey}}",
+      "dimensions": {{embeddingDimensions}},
+      "inputs": [
+        { "name": "text", "source": "/document/pages/*" }
+      ],
+      "outputs": [
+        { "name": "embedding", "targetName": "vector" }
+      ]
+    }
+  ],
+  "indexProjections": {
+    "selectors": [
+      {
+        "targetIndexName": "{{index-prefix}}-chunks-index",
+        "parentKeyFieldName": "parentId",
+        "sourceContext": "/document/pages/*",
+        "mappings": [
+          { "name": "content", "source": "/document/pages/*" },
+          { "name": "contentVector", "source": "/document/pages/*/vector" },
+
+          { "name": "title", "source": "/document/metadata_spo_item_name" },
+          { "name": "metadata_spo_item_path", "source": "/document/metadata_spo_item_path" },
+          { "name": "url", "source": "/document/metadata_spo_item_weburi" },
+          { "name": "metadata_spo_item_last_modified", "source": "/document/metadata_spo_item_last_modified" },
+
+          { "name": "UserIds", "source": "/document/mergedUserIds" },
+          { "name": "GroupIds", "source": "/document/mergedGroupIds" },
+          {
+            "name": "SharePointSiteUrl",
+            "source": "/document/metadata_spo_site_url"
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "projectionMode": "skipIndexingParentDocuments"
+    }
+  }
+}
+
+###
+# NOTE: while verifying ACL population, you can temporarily flip
+# "retrievable" to true on UserIds/GroupIds (no rebuild required),
+# then flip back to false afterward.
+
+# --------------------------------------------------------------------
+# 4. All-content indexer -> shared chunk index via all-content skillset.
+# Required mapping: metadata_spo_site_asset_item_id -> parentId.
+# --------------------------------------------------------------------
+POST https://{{searchService}}.search.windows.net/indexers?api-version=2026-05-01-preview
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "name": "{{index-prefix}}-pages-indexer",
+  "dataSourceName": "{{index-prefix}}-pages-datasource",
+  "targetIndexName": "{{index-prefix}}-chunks-index",
+  "skillsetName": "{{index-prefix}}-pages-skillset",
+
+  "fieldMappings": [
+    {
+      "sourceFieldName": "metadata_spo_site_asset_item_id",
+      "targetFieldName": "parentId",
+      "mappingFunction": {
+        "name": "base64Encode"
+      }
+    },
+    {
+      "sourceFieldName": "metadata_spo_site_url",
+      "targetFieldName": "SharePointSiteUrl"
+    }
+  ],
+
+  "parameters": {
+    "configuration": {
+      "dataToExtract": "contentAndMetadata",
+      "failOnUnsupportedContentType": false,
+      "failOnUnprocessableDocument": false
+    }
+  }
+}
+
+###
+
+
+
+# --------------------------------------------------------------------
+# 5. Run all-content indexer (documents + pages + lists).
+# --------------------------------------------------------------------
+POST https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer/run?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+POST https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer/reset?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+# Test the ACL enrichment endpoint with the same payload shape used by the custom skill.
+POST https://fapp-ai-updateindex-dev-ccanada-001-gbfsdua6bpa8e8a6.canadacentral-01.azurewebsites.net/api/enrich-sharepoint-acls?code={{aclFunctionKey}}
+Content-Type: application/json
+
+{
+  "values": [
+    {
+      "recordId": "test-1",
+      "data": {
+        "url": "https://fshr.sharepoint.com/sites/DigitalGuestExperienceKnowledge/SitePages/iris/Logging-in-and-Logging-Out-of-iRiS.aspx?csf=1&web=1&share=Efd3K-bZPyVGq0TAQ_bMhX8B2-cWzpaUQOVEnui6f4mAdQ&e=1BaR2m",
+        "existingUserIds": [],
+        "existingGroupIds": []
+      }
+    }
+  ]
+}
+
+###
+GET https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer/status?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+GET https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer/status?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+
+# If ACL support was added AFTER an initial index run, backfill permissions
+# only (skips re-chunking/re-embedding content):
+POST https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer/resync?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "options": ["permissions"]
+}
+
+###
+
+
+# --------------------------------------------------------------------
+# 6. Verification
+# --------------------------------------------------------------------
+
+# Indexer status / errors (all-content indexer)
+GET https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer/status?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+
+# before ACLs: 3570
+# User-scoped visible document count (ACL enforced by caller token)
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs?search=*&$count=true&$top=0&api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+x-ms-query-source-authorization: {{querySourceToken}}
+
+###
+
+# Elevated-read total document count (ignores caller ACL visibility)
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs?search=*&$count=true&$top=0&api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+x-ms-enable-elevated-read: true
+
+###
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs?search=%222026-06-30%20-%20Copilot%20-%20Tip%20and%20Trick%20-%20Boost%20Your%20Research%20Game%20with%20Copilot%20Chat_post%20script_final.docx%22&searchFields=title
+&$top=5
+&$select=chunkId,parentId,title,url,metadata_spo_item_path,UserIds,GroupIds
+&api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+x-ms-query-source-authorization: {{querySourceToken}}
+
+# x-ms-enable-elevated-read: true
+
+###
+
+###
+
+GET https://{{searchService}}.search.windows.net/datasources/{{index-prefix}}-pages-datasource?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+# ###
+# GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs
+# ?search=*
+# &$top=1
+# &$select=metadata_spo_site_id,metadata_spo_library_id,metadata_spo_item_id,metadata_spo_item_name,metadata_spo_item_path,metadata_spo_item_weburi,GroupIds,UserIds
+# &api-version=2026-05-01-preview
+
+# Authorization: Bearer {{accessToken}}
+# x-ms-enable-elevated-read: true
+
+
+###
+
+GET https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+###
+
+# Chunk index schema
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+
+# Doc + chunk count
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs?search=*&$count=true&api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+x-ms-query-source-authorization: {{querySourceToken}}
+# x-ms-enable-elevated-read: true
+
+###
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs
+?search=*
+&$count=true
+&api-version=2026-05-01-preview
+
+Authorization: Bearer {{accessToken}}
+
+###
+
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs
+?search=*
+&$top=1
+&$select=url,GroupIds,title, UserIds, GroupIds
+&api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+x-ms-enable-elevated-read: true
+
+###
+
+# search for a specific document using the filename from the SharePoint URL.
+# The raw Doc.aspx URL is not a good search term here because `&` breaks the
+# query string and the `url` field on this index is not searchable.
+
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs?search=%22Four%20Seasons%20standards%202026%20-%207.%20Additional%20Services%20%28Display%20Only%29.xlsx%22&searchFields=title
+&$top=5
+&$select=chunkId,parentId,title,url,metadata_spo_item_path,UserIds,GroupIds
+&api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+x-ms-enable-elevated-read: true
+
+###
+
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs
+?search=*
+&$top=1
+&api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+x-ms-query-source-authorization: {{querySourceToken}}
+# x-ms-enable-elevated-read: true
+
+###
+
+# Elevated-read spot check that UserIds/GroupIds populated on chunks
+# (requires UserIds/GroupIds retrievable=true temporarily — see step 2 note)
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs?search=*&$top=5&$select=chunkId,parentId,metadata_spo_item_name,UserIds,GroupIds&api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+x-ms-enable-elevated-read: true
+
+###
+
+# Query-time ACL enforcement check (non-elevated, using a caller's token)
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/
+docs?search=*&$count=true&api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+x-ms-enable-elevated-read: true
+# x-ms-query-source-authorization: {{querySourceToken}}
+
+###
+
+GET https://srch-ai-kmagent-dev-ccanada-001.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs?search=*&$count=true&$top=0&api-version=2026-05-01-preview
+
+Authorization: Bearer <search-service-token>
+x-ms-query-source-authorization: <user-token>
+
+###
+
+# Sample chunk content + vector presence (don't leave vectors retrievable
+# in production if not needed — costs payload size)
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs?search=*&$top=3&$select=chunkId,parentId,content&api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+
+###
+GET https://graph.microsoft.com/beta/applications/763423e7-63d0-4361-83d2-378929995d69/federatedIdentityCredentials
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6Imp0aHVQelpNVVhxakVVRF9qRW1ELWtSbi1la2cxdXBLbzVlX0hEcHRybnMiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFGa21LVkZjLTRXVjZzWENCdk5aa1hJNTA1WSIsImtpZCI6ImFGa21LVkZjLTRXVjZzWENCdk5aa1hJNTA1WSJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zOGMwMTA3ZC04MWQxLTQxOWYtOGI3Mi04YTQ5MWRjOTYwM2MvIiwiaWF0IjoxNzg1MjYyNDQwLCJuYmYiOjE3ODUyNjI0NDAsImV4cCI6MTc4NTM0OTE0MCwiYWNjdCI6MCwiYWNyIjoiMSIsImFjcnMiOlsicDEiLCJ1cm46dXNlcjpyZWdpc3RlcnNlY3VyaXR5aW5mbyIsInBmZHIiXSwiYWlvIjoiQVhRQWkvOGNBQUFBYVYvMmlFQzNGSmtsNDU5SGZ4VW93ZU02ZnhlRTlSTmdtQVkwRUNOSEhIZVg3QWFwU0RROHBQcGErTVR3S3pUeU5jMTlDVDRPdUh3bCtqL2YzVHNPQ3A2SGljTkVlRDlBM2czZEZpdlgyYXVZVFplMElTNEFxemY3N3NTaUszUXlBUUJ2WjZ2eEhZYWE1dUg0cm5USE5nPT0iLCJhbXIiOlsicHdkIiwicnNhIiwibWZhIl0sImFwcF9kaXNwbGF5bmFtZSI6Ik1pY3Jvc29mdCBBenVyZSBDTEkiLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImNhcG9saWRzX2xhdGViaW5kIjpbIjMwY2NkMTAwLTQ2MjgtNDY2MS05OTZjLWViODQ5YmUzYjUyOCJdLCJkZXZpY2VpZCI6IjA0NjA3MjMzLTU0NWQtNGYxYS04MjlhLTFkZjI2MDQ4MDA4NiIsImZhbWlseV9uYW1lIjoiTGkiLCJnaXZlbl9uYW1lIjoiWXVYaW4iLCJpZHR5cCI6InVzZXIiLCJpcGFkZHIiOiI1Mi42MC4yMTAuMTMzIiwibmFtZSI6Ill1WGluIExpIiwib2lkIjoiNmYxMzI1MDYtYzFjMi00Mjk5LWI1NTYtNTRkZTc0NTZkOTVjIiwib25wcmVtX3NpZCI6IlMtMS01LTIxLTc5Mjg4NTgxNC0xMjQ5MTMyNTM5LTU1OTM5MTUxNy02NTIyNTAiLCJwbGF0ZiI6IjMiLCJwdWlkIjoiMTAwMzIwMDVDMjdGRTU4RSIsInB3ZF9leHAiOiI1Nzc3Njk2IiwicHdkX3VybCI6Imh0dHBzOi8vZ28ubWljcm9zb2Z0LmNvbS9md2xpbmsvP2xpbmtpZD0yMjI0MTk4IiwicmgiOiIxLkFURUFmUkRBT05HQm4wR0xjb3BKSGNsZ1BBTUFBQUFBQUFBQXdBQUFBQUFBQUFBQUFMY3hBQS4iLCJzY3AiOiJBcHBsaWNhdGlvbi5SZWFkV3JpdGUuQWxsIEFwcFJvbGVBc3NpZ25tZW50LlJlYWRXcml0ZS5BbGwgQXVkaXRMb2cuUmVhZC5BbGwgRGVsZWdhdGVkUGVybWlzc2lvbkdyYW50LlJlYWRXcml0ZS5BbGwgRGlyZWN0b3J5LkFjY2Vzc0FzVXNlci5BbGwgZW1haWwgR3JvdXAuUmVhZFdyaXRlLkFsbCBvcGVuaWQgcHJvZmlsZSBTdWJqZWN0TmFtZVJlZ2lzdHJhdGlvbi5SZWFkV3JpdGUgVXNlci5SZWFkLkFsbCBVc2VyLlJlYWRXcml0ZS5BbGwiLCJzaWQiOiIwMDNlNzA3YS02YTU5LTJmMmEtZDhiMC1mY2RmNDE5YWQwNzkiLCJzaWduaW5fc3RhdGUiOlsiZHZjX21uZ2QiLCJkdmNfZG1qZCJdLCJzdWIiOiI4bjZZTlpzRGRfdkg2clVEdGcxRGdzbjR0NnV4MTFvWS1uejZkTkpGODhzIiwidGVuYW50X3JlZ2lvbl9zY29wZSI6IkVVIiwidGlkIjoiMzhjMDEwN2QtODFkMS00MTlmLThiNzItOGE0OTFkYzk2MDNjIiwidW5pcXVlX25hbWUiOiJZdVhpbi5MaUBmb3Vyc2Vhc29ucy5jb20iLCJ1cG4iOiJZdVhpbi5MaUBmb3Vyc2Vhc29ucy5jb20iLCJ1dGkiOiJUamJ3Mk1UbEQwZXBYOF9ZV3BCbEFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX2FjdF9mY3QiOiI1IDMiLCJ4bXNfY2MiOlsiQ1AxIl0sInhtc19mdGQiOiJiUS1YOWZSQzNabi1xcl9MLTEtdUNkOWRRNnQ1TnB6U3lHSVFTVHpsczdRQlpYVnliM0JsZDJWemRDMWtjMjF6IiwieG1zX2lkcmVsIjoiMSAxNiIsInhtc19wZnRleHAiOjE3ODU0MzU1NDAsInhtc19zc20iOiIxIiwieG1zX3N0Ijp7InN1YiI6InpEMVpqXzVjYUdDMXhZRG16cmJjUjdKa1ZuUnN1UGRvdDQ1bVdfOTlMMWcifSwieG1zX3N1Yl9mY3QiOiI4IDMiLCJ4bXNfdGNkdCI6MTU0NzIzODUzOCwieG1zX3RkYnIiOiJFVSIsInhtc190bnRfZmN0IjoiMyA0In0.jnmJckS0tlM2qYcBXXaWwNYlQEQRifyXAZ6Mg33Pab-3vvLrqII2W6_5a2swJZtH1OeJlmCj_CzNtCNkEU5YKsbS2ara3H-zMNb2f2HU-tFY1iKLnX36ZBJYA45iuq04RPcyjwA2kaQOyRaYSi0MQUhl2BOYR5DYmoT0N2w8us1yOvmmmbM6Aamz_WUVmy5-7pFhqRgLpQKfxtcejPJX0QDYjmXQNhME0PeeKd8Z7LJjD3B2ViJNdhunH3gAdN8FDgId_ewTroBouaPjAROO6IUWOF06KuI7org7Kyizct-rXQDb9BVlWcQLl1AXTc3b_a7N6cIbxRjHXtXrybDGBA
+
+###
+GET https://graph.microsoft.com/v1.0/servicePrincipals?$filter=appId eq 'afdfda6a-cc57-4bf2-9dd2-bf4a538824a6'
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6Imp0aHVQelpNVVhxakVVRF9qRW1ELWtSbi1la2cxdXBLbzVlX0hEcHRybnMiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFGa21LVkZjLTRXVjZzWENCdk5aa1hJNTA1WSIsImtpZCI6ImFGa21LVkZjLTRXVjZzWENCdk5aa1hJNTA1WSJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zOGMwMTA3ZC04MWQxLTQxOWYtOGI3Mi04YTQ5MWRjOTYwM2MvIiwiaWF0IjoxNzg1MjYyNDQwLCJuYmYiOjE3ODUyNjI0NDAsImV4cCI6MTc4NTM0OTE0MCwiYWNjdCI6MCwiYWNyIjoiMSIsImFjcnMiOlsicDEiLCJ1cm46dXNlcjpyZWdpc3RlcnNlY3VyaXR5aW5mbyIsInBmZHIiXSwiYWlvIjoiQVhRQWkvOGNBQUFBYVYvMmlFQzNGSmtsNDU5SGZ4VW93ZU02ZnhlRTlSTmdtQVkwRUNOSEhIZVg3QWFwU0RROHBQcGErTVR3S3pUeU5jMTlDVDRPdUh3bCtqL2YzVHNPQ3A2SGljTkVlRDlBM2czZEZpdlgyYXVZVFplMElTNEFxemY3N3NTaUszUXlBUUJ2WjZ2eEhZYWE1dUg0cm5USE5nPT0iLCJhbXIiOlsicHdkIiwicnNhIiwibWZhIl0sImFwcF9kaXNwbGF5bmFtZSI6Ik1pY3Jvc29mdCBBenVyZSBDTEkiLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImNhcG9saWRzX2xhdGViaW5kIjpbIjMwY2NkMTAwLTQ2MjgtNDY2MS05OTZjLWViODQ5YmUzYjUyOCJdLCJkZXZpY2VpZCI6IjA0NjA3MjMzLTU0NWQtNGYxYS04MjlhLTFkZjI2MDQ4MDA4NiIsImZhbWlseV9uYW1lIjoiTGkiLCJnaXZlbl9uYW1lIjoiWXVYaW4iLCJpZHR5cCI6InVzZXIiLCJpcGFkZHIiOiI1Mi42MC4yMTAuMTMzIiwibmFtZSI6Ill1WGluIExpIiwib2lkIjoiNmYxMzI1MDYtYzFjMi00Mjk5LWI1NTYtNTRkZTc0NTZkOTVjIiwib25wcmVtX3NpZCI6IlMtMS01LTIxLTc5Mjg4NTgxNC0xMjQ5MTMyNTM5LTU1OTM5MTUxNy02NTIyNTAiLCJwbGF0ZiI6IjMiLCJwdWlkIjoiMTAwMzIwMDVDMjdGRTU4RSIsInB3ZF9leHAiOiI1Nzc3Njk2IiwicHdkX3VybCI6Imh0dHBzOi8vZ28ubWljcm9zb2Z0LmNvbS9md2xpbmsvP2xpbmtpZD0yMjI0MTk4IiwicmgiOiIxLkFURUFmUkRBT05HQm4wR0xjb3BKSGNsZ1BBTUFBQUFBQUFBQXdBQUFBQUFBQUFBQUFMY3hBQS4iLCJzY3AiOiJBcHBsaWNhdGlvbi5SZWFkV3JpdGUuQWxsIEFwcFJvbGVBc3NpZ25tZW50LlJlYWRXcml0ZS5BbGwgQXVkaXRMb2cuUmVhZC5BbGwgRGVsZWdhdGVkUGVybWlzc2lvbkdyYW50LlJlYWRXcml0ZS5BbGwgRGlyZWN0b3J5LkFjY2Vzc0FzVXNlci5BbGwgZW1haWwgR3JvdXAuUmVhZFdyaXRlLkFsbCBvcGVuaWQgcHJvZmlsZSBTdWJqZWN0TmFtZVJlZ2lzdHJhdGlvbi5SZWFkV3JpdGUgVXNlci5SZWFkLkFsbCBVc2VyLlJlYWRXcml0ZS5BbGwiLCJzaWQiOiIwMDNlNzA3YS02YTU5LTJmMmEtZDhiMC1mY2RmNDE5YWQwNzkiLCJzaWduaW5fc3RhdGUiOlsiZHZjX21uZ2QiLCJkdmNfZG1qZCJdLCJzdWIiOiI4bjZZTlpzRGRfdkg2clVEdGcxRGdzbjR0NnV4MTFvWS1uejZkTkpGODhzIiwidGVuYW50X3JlZ2lvbl9zY29wZSI6IkVVIiwidGlkIjoiMzhjMDEwN2QtODFkMS00MTlmLThiNzItOGE0OTFkYzk2MDNjIiwidW5pcXVlX25hbWUiOiJZdVhpbi5MaUBmb3Vyc2Vhc29ucy5jb20iLCJ1cG4iOiJZdVhpbi5MaUBmb3Vyc2Vhc29ucy5jb20iLCJ1dGkiOiJUamJ3Mk1UbEQwZXBYOF9ZV3BCbEFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX2FjdF9mY3QiOiI1IDMiLCJ4bXNfY2MiOlsiQ1AxIl0sInhtc19mdGQiOiJiUS1YOWZSQzNabi1xcl9MLTEtdUNkOWRRNnQ1TnB6U3lHSVFTVHpsczdRQlpYVnliM0JsZDJWemRDMWtjMjF6IiwieG1zX2lkcmVsIjoiMSAxNiIsInhtc19wZnRleHAiOjE3ODU0MzU1NDAsInhtc19zc20iOiIxIiwieG1zX3N0Ijp7InN1YiI6InpEMVpqXzVjYUdDMXhZRG16cmJjUjdKa1ZuUnN1UGRvdDQ1bVdfOTlMMWcifSwieG1zX3N1Yl9mY3QiOiI4IDMiLCJ4bXNfdGNkdCI6MTU0NzIzODUzOCwieG1zX3RkYnIiOiJFVSIsInhtc190bnRfZmN0IjoiMyA0In0.jnmJckS0tlM2qYcBXXaWwNYlQEQRifyXAZ6Mg33Pab-3vvLrqII2W6_5a2swJZtH1OeJlmCj_CzNtCNkEU5YKsbS2ara3H-zMNb2f2HU-tFY1iKLnX36ZBJYA45iuq04RPcyjwA2kaQOyRaYSi0MQUhl2BOYR5DYmoT0N2w8us1yOvmmmbM6Aamz_WUVmy5-7pFhqRgLpQKfxtcejPJX0QDYjmXQNhME0PeeKd8Z7LJjD3B2ViJNdhunH3gAdN8FDgId_ewTroBouaPjAROO6IUWOF06KuI7org7Kyizct-rXQDb9BVlWcQLl1AXTc3b_a7N6cIbxRjHXtXrybDGBA
+
+###
+
+GET https://graph.microsoft.com/v1.0/applications/763423e7-63d0-4361-83d2-378929995d69/federatedIdentityCredentials/6489f4bc-a5e2-473b-92f3-750192380e46
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IjBuM2JxcXdrNloxZ0IzTVkyUUVxbW5BRmp4TEZjUk5FbjdqX3l3aFl1Z1kiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFGa21LVkZjLTRXVjZzWENCdk5aa1hJNTA1WSIsImtpZCI6ImFGa21LVkZjLTRXVjZzWENCdk5aa1hJNTA1WSJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zOGMwMTA3ZC04MWQxLTQxOWYtOGI3Mi04YTQ5MWRjOTYwM2MvIiwiaWF0IjoxNzg0ODI0MTk0LCJuYmYiOjE3ODQ4MjQxOTQsImV4cCI6MTc4NDkxMDg5NCwiYWNjdCI6MCwiYWNyIjoiMSIsImFjcnMiOlsicDEiLCJ1cm46dXNlcjpyZWdpc3RlcnNlY3VyaXR5aW5mbyIsInBmZHIiXSwiYWlvIjoiQVhRQWkvOGNBQUFBU0ltZ0J5Tmg2RjVZc0RTQzZYbk9VaHdlRGFkQTJoMitscEFuQWM3Tm5RZ2Fpa0ZHbUl1bmNHcnBpN0RpOWh3b1VpM1A5Vm1RckphMEVIL3FlYjZsT0NMNkp6YVNHTU1IbThpVUJQWmVQL0RzcFRNN3dQczNBN0p3UzM5Ti84K1dUUnhpMEJUbnJSR2FQOGFsL25lVm5nPT0iLCJhbXIiOlsicHdkIiwicnNhIiwibWZhIl0sImFwcF9kaXNwbGF5bmFtZSI6Ik1pY3Jvc29mdCBBenVyZSBDTEkiLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImNhcG9saWRzX2xhdGViaW5kIjpbIjMwY2NkMTAwLTQ2MjgtNDY2MS05OTZjLWViODQ5YmUzYjUyOCJdLCJkZXZpY2VpZCI6IjA0NjA3MjMzLTU0NWQtNGYxYS04MjlhLTFkZjI2MDQ4MDA4NiIsImZhbWlseV9uYW1lIjoiTGkiLCJnaXZlbl9uYW1lIjoiWXVYaW4iLCJpZHR5cCI6InVzZXIiLCJpcGFkZHIiOiI1Mi42MC4yMTAuMTMzIiwibmFtZSI6Ill1WGluIExpIiwib2lkIjoiNmYxMzI1MDYtYzFjMi00Mjk5LWI1NTYtNTRkZTc0NTZkOTVjIiwib25wcmVtX3NpZCI6IlMtMS01LTIxLTc5Mjg4NTgxNC0xMjQ5MTMyNTM5LTU1OTM5MTUxNy02NTIyNTAiLCJwbGF0ZiI6IjMiLCJwdWlkIjoiMTAwMzIwMDVDMjdGRTU4RSIsInB3ZF9leHAiOiI2MjE1OTQyIiwicHdkX3VybCI6Imh0dHBzOi8vZ28ubWljcm9zb2Z0LmNvbS9md2xpbmsvP2xpbmtpZD0yMjI0MTk4IiwicmgiOiIxLkFURUFmUkRBT05HQm4wR0xjb3BKSGNsZ1BBTUFBQUFBQUFBQXdBQUFBQUFBQUFBQUFMY3hBQS4iLCJzY3AiOiJBcHBsaWNhdGlvbi5SZWFkV3JpdGUuQWxsIEFwcFJvbGVBc3NpZ25tZW50LlJlYWRXcml0ZS5BbGwgQXVkaXRMb2cuUmVhZC5BbGwgRGVsZWdhdGVkUGVybWlzc2lvbkdyYW50LlJlYWRXcml0ZS5BbGwgRGlyZWN0b3J5LkFjY2Vzc0FzVXNlci5BbGwgZW1haWwgR3JvdXAuUmVhZFdyaXRlLkFsbCBvcGVuaWQgcHJvZmlsZSBTdWJqZWN0TmFtZVJlZ2lzdHJhdGlvbi5SZWFkV3JpdGUgVXNlci5SZWFkLkFsbCBVc2VyLlJlYWRXcml0ZS5BbGwiLCJzaWQiOiIwMDNlNzA3YS02YTU5LTJmMmEtZDhiMC1mY2RmNDE5YWQwNzkiLCJzaWduaW5fc3RhdGUiOlsiZHZjX21uZ2QiLCJkdmNfZG1qZCJdLCJzdWIiOiI4bjZZTlpzRGRfdkg2clVEdGcxRGdzbjR0NnV4MTFvWS1uejZkTkpGODhzIiwidGVuYW50X3JlZ2lvbl9zY29wZSI6IkVVIiwidGlkIjoiMzhjMDEwN2QtODFkMS00MTlmLThiNzItOGE0OTFkYzk2MDNjIiwidW5pcXVlX25hbWUiOiJZdVhpbi5MaUBmb3Vyc2Vhc29ucy5jb20iLCJ1cG4iOiJZdVhpbi5MaUBmb3Vyc2Vhc29ucy5jb20iLCJ1dGkiOiJFa3V2NHhmR3RFMmR1T2g3cXFia0FBIiwidmVyIjoiMS4wIiwid2lkcyI6WyJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX2FjdF9mY3QiOiI1IDMiLCJ4bXNfY2MiOlsiQ1AxIl0sInhtc19mdGQiOiJOMlM3ZV9Na1drMHk0dDNTc2NsU0FoRlNHQkptMVE1UU1ObDhJRVl2a0tZQlpYVnliM0JsZDJWemRDMWtjMjF6IiwieG1zX2lkcmVsIjoiMSA0IiwieG1zX3BmdGV4cCI6MTc4NDk5NzI5NCwieG1zX3NzbSI6IjEiLCJ4bXNfc3QiOnsic3ViIjoiekQxWmpfNWNhR0MxeFlEbXpyYmNSN0prVm5Sc3VQZG90NDVtV185OUwxZyJ9LCJ4bXNfc3ViX2ZjdCI6IjMgMTQiLCJ4bXNfdGNkdCI6MTU0NzIzODUzOCwieG1zX3RkYnIiOiJFVSIsInhtc190bnRfZmN0IjoiMyAxOCJ9.Ff8OZEsezqsos__qzlhxg9ESPW2jUzoXEA4oq5rBk8tWOsA2gbfsRazRsQOGDvnf6__oJLDKxDKZi-PTkH2hW1DsMmhJTgvC8Ya9AqH9L9PWsnbX-bOJq1CW-lTWJXPkX7SiE1_P4324Vb7GXM3GUBAeNGNrWx7mSADh8CUYLxkRZEHuP0ueWgkeeCw6K477I6uaoW-seen5dl77dG3UPgpUN8_V7Lsrgfqwb9frfMO4zflxOC6SLuGsVNYqjez7Ea2wqVYHiXTfKeb1_lckOZOTY6ce-VRzxDXU5bfIosxXt2RsT4s2rqH7aHP4bdG5fLr4Z_q7hL_a5UGI-9tn8A
+
+###
+
+#testing
+
+###
+# 1) Reset pages indexer (forces full recrawl)
+POST https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer/reset?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+# 2) Run pages indexer
+POST https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer/run?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+# 3) Get indexer status (includes lastResult + executionHistory)
+GET https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer/status?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+# 4) Get indexer definition (optional sanity check)
+GET https://{{searchService}}.search.windows.net/indexers/{{index-prefix}}-pages-indexer?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+# 5) Get pages datasource definition (optional sanity check)
+GET https://{{searchService}}.search.windows.net/datasources/{{index-prefix}}-pages-datasource?api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+
+###
+# 6) Debug query: check Home.aspx exists in index (elevated read)
+GET https://{{searchService}}.search.windows.net/indexes/{{index-prefix}}-chunks-index/docs?search=Home.aspx&$count=true&$top=5&$select=metadata_spo_item_name,metadata_spo_item_weburi,metadata_spo_item_path&api-version=2026-05-01-preview
+Authorization: Bearer {{accessToken}}
+x-ms-enable-elevated-read: true
